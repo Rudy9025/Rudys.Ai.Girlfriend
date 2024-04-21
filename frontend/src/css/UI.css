@@ -1,0 +1,198 @@
+.inputField {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: auto;
+  width: 560px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.inputField button {
+  background-color: fuchsia;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .inputField {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 400px; /* Set maximum width */
+  }
+
+  .inputField button {
+    width: 90%; /* Button takes full width */
+    max-width: 100px;
+  }
+}
+
+.inputField input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
+
+.inputField button:hover {
+  background-color: rgb(194, 29, 194);
+}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  animation: l7 1s infinite linear;
+}
+@keyframes l7 {
+  33% {
+    background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%;
+  }
+  50% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%;
+  }
+  66% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%;
+  }
+}
+
+/* side buttons */
+
+.a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+  width: 560px;
+  position: absolute;
+  top: 6%;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.a button {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  padding: 0.7rem 16px;
+  font-weight: 600;
+  margin: 10px 0;
+  text-transform: uppercase;
+  border: solid rgb(0, 0, 0) 1px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .a {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .a button {
+    width: 20%;
+    font-size: 10px;
+    text-align: center;
+    max-width: 100px;
+  }
+}
+
+.a button:hover {
+  background-color: transparent;
+  border: solid 1px rgb(0, 16, 242);
+  color: rgb(0, 16, 242);
+  box-shadow: #000000 10px 6px 70px 10px;
+}
+
+/* card */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  width: 220px;
+  height: 70px;
+  padding: 0px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.175);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.266);
+  backdrop-filter: blur(15px);
+  top: 15%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+  /** TEXT GRADIENT */
+  color: #ff0808;
+  background-image: -webkit-radial-gradient(
+    circle,
+    #ff0808 0%,
+    #2a33db 54%,
+    #07fa10 94%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 20%;
+    height: 15%;
+    max-width: 100px;
+    padding: 0px 5px;
+    top: 19%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+  }
+  .sameline {
+    display: flex;
+  }
+  .arrow {
+    font-size: 10px;
+    cursor: pointer;
+  }
+}
+
+.sameline {
+  display: flex;
+}
+.arrow {
+  font-size: 12px;
+  cursor: pointer;
+}
+.arrow:hover {
+  font-size: 15px;
+}
+
+/* response from backend */
+.container {
+  width: 400px;
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
