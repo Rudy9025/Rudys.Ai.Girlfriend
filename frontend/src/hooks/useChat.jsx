@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const backendUrl = "http://localhost:7000";
+const backendUrl = "https://ai-girlfriend-backend.onrender.com";
 
 const ChatContext = createContext();
 
