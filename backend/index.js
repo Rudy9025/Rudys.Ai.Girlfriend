@@ -65,14 +65,6 @@ app.post("/chat", async (req, res) => {
 
     console.log(firstText);
 
-    // say.speak(firstText, "Microsoft Zira Desktop", 0.9, (err) => {
-    //   if (err) {
-    //     console.error(err);
-    //     say.speak(err.message, "Microsoft Zira Desktop", 0.9);
-    //   }
-    // });
-  
-
     res.json({ text: firstText });
   } catch (error) {
     console.error("Error:", error);
@@ -83,8 +75,7 @@ app.post("/chat", async (req, res) => {
         utterance.voice = femaleVoice || voices[0];
        speechSynthesis.speak(utterance);
 
-    // say.speak(error.message, "Microsoft Zira Desktop", 0.9);
-    res.status(500).json({ error: "An error occurred" });
+     res.status(500).json({ error: "An error occurred" });
   }
 });
 

@@ -21,7 +21,7 @@ export const ChatProvider = ({ children }) => {
       });
       const { text } = await data.json();
       console.log(text);
-      setText(text);
+       setText(text);
       setMessages((messages) => [...messages, { text }]);
     } catch (error) {
       console.error("Chat error:", error);

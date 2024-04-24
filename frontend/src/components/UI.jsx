@@ -8,6 +8,7 @@ export const UI = ({ hidden, ...props }) => {
   const { chat, message, text } = useChat();
   const [loading, setLoading] = useState(false);
   const [lastLoadingState, setLastLoadingState] = useState(false);
+   const [visible, setVisible] = useState(true);
   const [showText, setShowText] = useState(false);
   const { playAnimation } = useContext(AnimationContext);
 
@@ -31,6 +32,9 @@ export const UI = ({ hidden, ...props }) => {
         input.current.value = "";
       });
     }
+  };
+const handleClose = () => {
+    setVisible(false);
   };
 
   useEffect(() => {
@@ -65,6 +69,7 @@ export const UI = ({ hidden, ...props }) => {
   const github = () => {
     window.open("https://www.instagram.com/__rudy.x/", "_blank");
   };
+
   return (
     <>
       <div className="inputField">
@@ -104,6 +109,18 @@ export const UI = ({ hidden, ...props }) => {
           <pre className="text">{text}</pre>
         </div>
       )}
+
+<div>
+      {visible && (
+        <div className="alert info">
+          <span className="closebtn" onClick={handleClose}>&times;</span>  
+        <strong>Note:</strong>  For the initial response, expect a delay of 30-45 seconds.
+        <br /> In the meantime, enjoy exploring the animations!
+        </div>
+      )}
+    </div>
+
+
     </>
   );
 };
