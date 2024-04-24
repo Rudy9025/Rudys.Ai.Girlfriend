@@ -8,19 +8,18 @@ export const UI = ({ hidden, ...props }) => {
   const { chat, message, text } = useChat();
   const [loading, setLoading] = useState(false);
   const [lastLoadingState, setLastLoadingState] = useState(false);
-   const [visible, setVisible] = useState(true);
   const [showText, setShowText] = useState(false);
+  const [visible, setVisible] = useState(true);
   const { playAnimation } = useContext(AnimationContext);
 
   const speakText = () => {
     const toSpeak = text;
     const utterance = new SpeechSynthesisUtterance(toSpeak);
-     const voices = window.speechSynthesis.getVoices();
-     const femaleVoice = voices.find(voice => voice.name.toLowerCase().includes('female'));
-      utterance.voice = femaleVoice || voices[0];
-     speechSynthesis.speak(utterance);
+    const voices = window.speechSynthesis.getVoices();
+    const femaleVoice = voices.find(voice => voice.name.toLowerCase().includes('female'));
+    utterance.voice = femaleVoice || voices[0];
+    speechSynthesis.speak(utterance);
   };
-  
 
   const sendMessage = () => {
     const text = input.current.value;
@@ -33,7 +32,8 @@ export const UI = ({ hidden, ...props }) => {
       });
     }
   };
-const handleClose = () => {
+
+  const handleClose = () => {
     setVisible(false);
   };
 
@@ -49,9 +49,9 @@ const handleClose = () => {
 
   useEffect(() => {
     if (text) {
-      speakText(); // Call the speakText function here
+      speakText();
       setShowText(true);
-       const timer = setTimeout(() => {
+      const timer = setTimeout(() => {
         setShowText(false);
       }, 11000);
       return () => clearTimeout(timer);
@@ -110,17 +110,13 @@ const handleClose = () => {
         </div>
       )}
 
-<div>
       {visible && (
-        <div className="alert info">
-          <span className="closebtn" onClick={handleClose}>&times;</span>  
-        <strong>Note:</strong>  For the initial response, expect a delay of 30-45 seconds.
-        <br /> In the meantime, enjoy exploring the animations!
+        <div className="alert info" onClick={handleClose}>
+          <span className="closebtn">&times;</span>  
+          <strong>Note:</strong>  For the initial response, expect a delay of 30-45 seconds.
+          <br /> In the meantime, enjoy exploring the animations!
         </div>
       )}
-    </div>
-
-
     </>
   );
 };
