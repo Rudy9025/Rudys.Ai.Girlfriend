@@ -102,10 +102,3 @@ npm run start
 4. Interact with the virtual girlfriend by clicking on the dance buttons or typing messages in the chat input.
 
 5. Enjoy dancing with and chatting to Rudy's Ai GirlFriend!
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-```
-
-Feel free to customize the content and folder structure according to your project's specifics. 
